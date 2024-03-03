@@ -1,0 +1,140 @@
+@import "../../styles/font/jost.css";
+// $len: 88px * 12;
+.index {
+  position: relative;
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+  align-items: center;
+  width: 100vw;
+  height: 150vh;
+  background-color: #0d0216;
+  color: #ffffff;
+  font-family: "Jost";
+  //border: 1px solid rgb(218, 154, 27);
+  .label {
+    position: fixed;
+    top: 116px;
+    // display: flex;
+    // align-items: center;
+    // justify-content: center;
+    width: 83px;
+    height: 28px;
+    padding: 0 6px;
+    border-radius: 4px;
+    background-color: rgba(199, 206, 209, 0.2);
+    gap: 10px;
+    z-index: 1;
+    .tag {
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 28px;
+      text-align: center;
+    }
+  }
+  .plate {
+    position: absolute;
+    top: 166px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    //align-items: center;
+    // justify-content: center;
+    .card {
+      position: relative;
+      width: 335px;
+      height: 78px;
+      border-radius: 10px;
+      background-color: rgba(199, 206, 209, 0.2);
+      .leftframe {
+        position: absolute;
+        display: flex;
+        gap: 5px;
+        flex-direction: column;
+        align-items: left;
+        top: 12px;
+        left: 24px;
+        //width: 61px;
+        height: 28px;
+        //border: 1px solid pink;
+        .planet {
+          //width: 30px;
+          height: 8px;
+          //border: 1px solid white;
+          font-size: 8px;
+          line-height: 8px;
+          font-weight: 600;
+        }
+        .miner {
+          //width: 61px;
+          height: 18px;
+          // border: 1px solid white;
+          font-size: 18px;
+          line-height: 18px;
+          font-weight: 500;
+        }
+        .status {
+          width: 53px;
+          height: 16px;
+          gap: 2px;
+          border-radius: 2px;
+          .statustext {
+            background-color: rgba(199, 206, 209, 0.1);
+            padding: 3px 6px;
+            font-size: 10px;
+            line-height: 10px;
+            text-align: center;
+            font-weight: 500;
+          }
+        }
+      }
+      .rightframe {
+        position: absolute;
+        gap: 5px;
+        top: 11.5px;
+        left: 150px;
+        width: 149px;
+        height: 56px;
+        .metrics {
+          float: left;
+          width: 59px;
+          height: 25px;
+          margin: 0 10px 5px 0;
+          gap: 2px;
+          .key {
+            width: 57px;
+            height: 9px;
+            margin-bottom: 2px;
+            font-weight: 400;
+            font-size: 9px;
+            line-height: 9px;
+            color: rgba(199, 206, 209, 0.6);
+          }
+          .val {
+            width: 52px;
+            height: 14px;
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 14px;
+          }
+          .full {
+            color: rgb(107, 228, 128);
+          }
+        }
+      }
+      .arrow {
+        position: absolute;
+        top: 33px;
+        left: 304px;
+        width: 7.13px;
+        height: 12px;
+        .forward {
+          display: block;
+          margin: 0 auto;
+          width: 100%;
+          height: 100%;
+        }
+      }
+    }
+  }
+}
