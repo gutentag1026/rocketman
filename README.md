@@ -1,7 +1,8 @@
 ### run the project
 1. Get the program running with
 > npm run dev:<platform>
-e.g
+
+*e.g*
 > npm run dev:weapp
 2. open dev sdk and import files from dist. Didn't register domain yet, so please tick Detail -> do not check illegal domain.
 
