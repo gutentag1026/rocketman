@@ -13,22 +13,23 @@ export default class Index extends Component {
       {
         pagePath: 'pages/index/index',
         selectedIconPath: '../images/miners-on.png',
-        iconPath: '../images/miners-on.png',
-        text: 'Miners'
+        iconPath: '../images/miners-off.png',
+        // text: 'Miners'
       },
-      // {
-      //   pagePath: 'pages/planet/index',
-      //   selectedIconPath: '../ASSETS/PNG/miners-off.png',
-      //   iconPath: '../ASSETS/PNG/miners-on.png',
-      //   text: '分类'
-      // }
+      {
+        pagePath: 'pages/planet/index',
+        selectedIconPath: '../images/asteroids-on.png',
+        iconPath: '../images/asteroids-off.png',
+        // text: 'Asteroids'
+      }
     ]
   }
 
-  // switchTab(index, url) {
-  //   this.setSelected(index)
-  //   Taro.switchTab({ url })
-  // }
+   switchTab(index, url) {
+     this.setSelected(index)
+
+     Taro.switchTab({ url })
+   }
 
   setSelected (idx ) {
     this.setState({
@@ -43,8 +44,8 @@ export default class Index extends Component {
       <CoverView className='tab-bar'>
         {list.map((item, index) => {
           return (
-            // <CoverView key={index} className='tab-bar-item' onClick={this.switchTab.bind(this, index, item.pagePath)}>
-            <CoverView key={index} className='tab-bar-item'>
+          <CoverView key={index} className='tab-bar-item' onClick={this.switchTab.bind(this, index, item.pagePath)}>
+            {/* <CoverView key={index} className='tab-bar-item'> */}
               <CoverImage src={selected === index ? item.selectedIconPath : item.iconPath} />
               <CoverView style={{ color: selected === index ? selectedColor : color }}>{item.text}</CoverView> 
             </CoverView>

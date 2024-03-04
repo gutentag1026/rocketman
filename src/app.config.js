@@ -21,16 +21,16 @@ export default defineAppConfig({
     list: [
         {
           pagePath: 'pages/index/index',
-          iconPath:'./images/miners-on.png',
+          iconPath:'./images/miners-off.png',
           text:'Miners',
           selectedIconPath:'./images/miners-on.png',
           
         },
         {
           pagePath:'pages/planet/index',
-          iconPath:'./images/miners-off.png',
+          iconPath:'./images/asteroids-off.png',
           text:'Asteroids',
-          selectedIconPath:'./images/miners-off.png',
+          selectedIconPath:'./images/asteroids-on.png',
         }
     ]
   }

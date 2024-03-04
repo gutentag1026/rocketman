@@ -1,5 +1,5 @@
 import { View, Image, Text } from '@tarojs/components'
-import arrow from '../ASSETS/SVG/arrow_forward_ios.svg'
+import arrow from './arrow_forward_ios.svg'
 
 const statusConverter = {
     0: 'Idle',
@@ -8,6 +8,7 @@ const statusConverter = {
     3 : 'Transfering'
 }
  export const Miner = ({miner, planet}) => {
+   // console.log('planet',planet)
     return  <View className='card'>
     <View className='leftframe'>
     <View className='planet'>
