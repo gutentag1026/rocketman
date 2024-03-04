@@ -1,6 +1,6 @@
 ### run the project
 1. Get the program running with
-> npm run dev:weapp <platform>
+> npm run dev:<platform>
 
 *e.g*
 > npm run dev:weapp
