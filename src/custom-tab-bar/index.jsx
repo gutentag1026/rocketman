@@ -25,10 +25,10 @@ export default class Index extends Component {
     ]
   }
 
-  switchTab(index, url) {
-    this.setSelected(index)
-    Taro.switchTab({ url })
-  }
+  // switchTab(index, url) {
+  //   this.setSelected(index)
+  //   Taro.switchTab({ url })
+  // }
 
   setSelected (idx ) {
     this.setState({
@@ -41,10 +41,10 @@ export default class Index extends Component {
 
     return (
       <CoverView className='tab-bar'>
-        {/* <CoverView className='tab-bar-border'></CoverView> */}
         {list.map((item, index) => {
           return (
-            <CoverView key={index} className='tab-bar-item' onClick={this.switchTab.bind(this, index, item.pagePath)}>
+            // <CoverView key={index} className='tab-bar-item' onClick={this.switchTab.bind(this, index, item.pagePath)}>
+            <CoverView key={index} className='tab-bar-item'>
               <CoverImage src={selected === index ? item.selectedIconPath : item.iconPath} />
               <CoverView style={{ color: selected === index ? selectedColor : color }}>{item.text}</CoverView> 
             </CoverView>

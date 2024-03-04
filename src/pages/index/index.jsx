@@ -1,36 +1,40 @@
-import Taro from '@tarojs/taro'
 import { Component } from 'react'
 import { connect } from 'react-redux'
 import { View, Text } from '@tarojs/components'
-import { getMiner } from '../../actions/miner'
+import { getMiner, getPlanet } from '../../actions/miner'
 import { Miner } from '../../components/Miner' 
 import { realtimedata } from '../../socket/websocket'
 import { NavBar } from '../../components/Navbar'
 import './index.scss'
 
 
-@connect(({ miner }) => ({
-  miner
+@connect(({ miner, planet }) => ({
+  miner,
+  planet
 }), (dispatch) => ({
   getMiners () {
     dispatch(getMiner())
+  },
+  getPlanet () {
+    dispatch(getPlanet())
   }
 }))
 class Index extends Component {
   config = {
     navigationBarTitleText: '',
     usingComponents: {
-        'NavBar': '../../components/Navbar', // 书写第三方组件的相对路径
+        'NavBar': '../../components/Navbar', 
     },
 }
   componentWillReceiveProps (nextProps) {
   }
   componentWillMount() {
     this.getMinerList()
+    this.getPlanetList()
   }
 
   componentDidMount() {
-    //realtimedata()
+    realtimedata()
     // Taro.setNavigationBarTitle({
     //   title: 'mmmmminers'
     // })
@@ -54,9 +58,18 @@ class Index extends Component {
   getMinerList(){
     this.props.getMiners()
   }
+  getPlanetList(){
+    this.props.getPlanet()
+  }
   render () {
     const { miners } = this.props.miner
+    const { planets } = this.props.planet
+  
+    const planetIdConverter = {}
+    planets.forEach(planet=>{
+      planetIdConverter[planet._id] = planet.name
 
+    })
     return (
       <View className='index'>
       <NavBar />
@@ -67,18 +80,10 @@ class Index extends Component {
           </View>
           <View className='plate'> 
             
-            { miners && miners.map((miner=>{
-                    return <Miner miner={miner} />
+            { planetIdConverter && miners && miners.map((miner=>{
+                    return <Miner miner={miner} planet={planetIdConverter[miner.planet]}/>
                 }))} 
             </View>
-         
-        
-        {/* <View className='tag'><Image src={test} /></View> */}
-        {/* <Button className='add_btn' onClick={this.props.add}>+</Button>
-        <Button className='dec_btn' onClick={this.props.dec}>-</Button> */}
-        {/* <Button className='dec_btn' onClick={this.props.asyncAdd}>async</Button> */}
-        {/* <View><Text>{this.props.counter.num}</Text></View> */}
-        {/* <View><Text className='text'>Hello, World</Text></View> */}
         </View>
   
     )

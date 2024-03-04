@@ -1,21 +1,17 @@
 import { View, Image, Text } from '@tarojs/components'
 import arrow from '../ASSETS/SVG/arrow_forward_ios.svg'
-const planetIdConverter = {
-    "65e2ffaa6d93e553445b1677":"Planet 1",
-    "65e2ffaa6d93e553445b1678":"Planet 2",
-    "65e2ffaa6d93e553445b1679":"Planet 3",
-}
+
 const statusConverter = {
     0: 'Idle',
     1: 'Travelling',
     2: 'Mining',
     3 : 'Transfering'
 }
- export const Miner = ({miner}) => {
+ export const Miner = ({miner, planet}) => {
     return  <View className='card'>
     <View className='leftframe'>
     <View className='planet'>
-        <Text>123{planetIdConverter[miner.planet]}</Text>
+        <Text>{planet}</Text>
     </View>
     <View className='miner'>
         <Text>{miner.name}</Text>
