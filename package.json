@@ -64,8 +64,10 @@
     "redux": "^4.0.0",
     "redux-logger": "^3.0.6",
     "redux-thunk": "^2.3.0",
-    "socket.io-client": "^4.7.4",
-    "taro-ui": "^3.3.0"
+    "socket.io": "^4.5.0",
+    "socket.io-client": "^4.5.0",
+    "taro-ui": "^3.3.0",
+    "weapp.socket.io": "^2.2.1"
   },
   "devDependencies": {
     "@babel/core": "^7.8.0",

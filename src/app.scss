@@ -1,3 +1,37 @@
 .taro_page {
   background: #0d0216 !important;
+  font-display: swap;
+  /* Set up Roboto for old browsers, only regular + bold */
+@supports not (font-variation-settings: normal) {
+  @font-face {
+    font-family: 'Jost';
+    src: url('./ASSETS/FONT/Jost/static/Jost-Black.ttf');
+    font-weight: normal;
+  }
+
+  body {
+    font-family: 'Jost';
+  }
+
+  .super-bold {
+    font-weight: bold;
+  }
 }
+
+/* Set up Roboto for modern browsers, all weights */
+@supports (font-variation-settings: normal) {
+  @font-face {
+    font-family: 'Jost';
+    src: url('./ASSETS/FONT/Jost/Jost-VariableFont_wght.ttf') format('ttf supports variations'),
+         url('./ASSETS/FONT/Jost/Jost-VariableFont_wght.ttf') format('ttf-variations');
+    font-weight: 100 1000;
+    font-stretch: 25% 151%;
+  }
+
+
+  .super-bold {
+    font-weight: 1000;
+    }
+  }
+}
+
