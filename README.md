@@ -3,6 +3,7 @@
 ```npm run dev:<platform>``` e.g
 
 > npm run dev:weapp
+
 > npm run dev:h5
 
 Websocket works for h5
