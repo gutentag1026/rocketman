@@ -1,6 +1,6 @@
 import { GETMINERS, GETPLANETS } from '../constants/counter'
 import { getMiners } from '../service/api'
-// import '@tarojs/async-await'
+// import '@tarojs/async-await hh'
 const regeneratorRuntime = global.regeneratorRuntime
 export const getMiner = () => {
    return dispatch => {
